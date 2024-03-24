@@ -23,12 +23,17 @@ for (x, y, w, h) in face:
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 # crop the detected faces from the image and save it in a folder.
-i=0
+num_faces=0
 for x,y,w,h in face:
     crop_faces=img[y:y+h,x:x+w]
-    target_file="face_detection"+str(i)+".jpg"
+    target_file="face_detection"+str(num_faces)+".jpg"
     cv2.imwrite(target_file,crop_faces,)
-    i=i+1
+    num_faces+=1
+    
+# return the number of people in the pic.
+print("THERE are",num_faces, "PEOPLE IN THE PICTURE.")
+    
+
     
 # choose the size of the window and show the pictures of detected faces.
 plt.figure(figsize=(5,5))
