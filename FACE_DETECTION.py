@@ -22,6 +22,14 @@ for (x, y, w, h) in face:
 # change the format from bgr to rgb.
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
+# crop the detected faces from the image and save it in a folder.
+i=0
+for x,y,w,h in face:
+    crop_faces=img[y:y+h,x:x+w]
+    target_file="face_detection"+str(i)+".jpg"
+    cv2.imwrite(target_file,crop_faces,)
+    i=i+1
+    
 # choose the size of the window and show the pictures of detected faces.
 plt.figure(figsize=(5,5))
 plt.imshow(img_rgb)
