@@ -3,10 +3,10 @@ import cv2
 import matplotlib.pyplot as plt
 
 # set a variable to import the specific image.
-image_path = 'input_image.jpg'
+image_path = r'test.jpg'
 
 # use cv2 to read the image.
-img = cv2.imread(image_path)
+img = cv2.imread(r'D:\10_PYTHON PROJECTS\FACE_DETECTION\test.jpg')
 
 # each pic has 3 dimensions we don't need one of them which is colors so we change it to gray also it helps to recognize better.
 gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
